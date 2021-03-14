@@ -1,3 +1,7 @@
+body {
+    background-color: #5DE0E6;
+}
+
 .controls label {
     font-weight: bold;
     margin-left: 8px;
@@ -34,6 +38,8 @@
     min-width: 360px;
     margin: 1em;
     border: 2px solid #000;
+    border-radius: 10px;
+    background: rgba(245, 245, 245, 0.781);
     display: block;
     overflow: hidden;
     float: left;
@@ -184,6 +190,8 @@ section iframe {
     background-color: #eee;
     overflow: hidden;
     width: 20em;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .strip form p,
@@ -346,11 +354,11 @@ section iframe {
 }
 
 .smallprint {
-    font-size: 60%;
+    font-size: 18px;
     color: #666;
     float: right;
     margin-top: -2em;
-    margin-right: 2em
+    margin-right: 2em;
 }
 
 .smallprint a {
@@ -375,4 +383,24 @@ a:active {
 
 #direct-link {
     margin: 4px 16px;
+}
+
+button {
+    color: whitesmoke;
+    background-color: #5DE0E6;
+    border: 1px solid #FFDE58;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:hover {
+    color: #5DE0E6;
+    background-color: whitesmoke;
+    border: 1px solid #FFDE58;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 6px;
+    font-family: Arial, Helvetica, sans-serif;
 }
