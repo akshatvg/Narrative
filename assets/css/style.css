@@ -387,7 +387,7 @@ a:active {
 
 button {
     color: whitesmoke;
-    background-color: #5DE0E6;
+    background-color: rgba(93, 223, 230, 0.699);
     border: 1px solid #FFDE58;
     font-weight: bolder;
     border-radius: 10px;

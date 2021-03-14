@@ -44,13 +44,18 @@
                         <button id="direct-button" data-step="9"
                             data-intro="Finally, click here to get the URL of your comic. Share it!">Get Direct
                             Link</button>
-                        <a href="#" id="direct-link"></a></span>
+                        <a href="#" id="direct-link"></a>
+                        <!-- Record Audio -->
+                        <button id="recordAudio" onclick="recordAudio();"><i class="fa fa-microphone"></i></button>
+                        <!-- Stop Record Audio -->
+                        <button id="stopRecordAudio" onclick="stopRecordAudio();"><i class="fa fa-stop"></i></button>
+                    </span>
                     <!-- Twitter share button -->
                     <span id="twitter-button"></span>
                     <!-- TinyURL link -->
-                    <script>
+                    <!-- <script>
                          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-                    </script>
+                    </script> -->
                 </header>
                 <!-- Comic strip -->
                 <article class="strip">
@@ -347,6 +352,7 @@
         crossorigin="anonymous"></script>
     <script src="assets/js/intro.min.js"></script>
     <script src="assets/js/qs.js"></script>
+    <script src="assets/js/record.js"></script>
     <script src="assets/js/index.js"></script>
 
 </body>
