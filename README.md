@@ -5,19 +5,15 @@
 With Narrative, anyone can express themselves creatively and make exciting comics in minutes through voice based commands.
 
 <p align="center">
-<a href="#!">
-<img src="https://github.com/akshatvg/Narrative/blob/master/Assets/app-icon-64%402x.png" width="120px" alt="Narrative Logo"/>
+<a href="https://narrative.akshatvg.com">
+<img src="assets/img/border-logo.png" width="200px" alt="Narrative Logo"/>
 </a>
 </p>
 
-![Generic badge](https://img.shields.io/badge/Random-Swag-orange) 
+![Generic badge](https://img.shields.io/badge/Narrative-Modernising_Comics-orange) 
 
-#### Link for [demo](#!) 
-[![Generic badge](https://img.shields.io/badge/view-demo-orange)](#!)
-
-## Useful Links
-
-- [Actual Website](#!)
+#### Link for [demo](https://narrative.akshatvg.com) 
+[![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://narrative.akshatvg.com)
 
 ## Requirements
 
@@ -27,9 +23,15 @@ The source code of this project is written in **`HTML/CSS/JS`**. So, you do not 
 
 ## Instructions
 
-[![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](#!)
+[![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https:/?narrative.akshatvg.com)
 
 Extract the folder and run `index.html`
+
+## Contributors
+- [Akshat Gupta](https://github.com/akshatvg)
+- [Sai Sandeep](https://github.com/raysandeep)
+- [Muskan Tewari](https://github.com/muskantewari)
+- [Nishi Jain](https://github.com/nishijjain)
 
 
 ## Need help?
