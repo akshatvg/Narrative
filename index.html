@@ -12,22 +12,289 @@
     <title>Narrative</title>
 
     <!-- Linking CSS, CDNs, Font Awesome, Libraries -->
+    <link rel="icon" href="assets/img/logo.png" />
+    <link rel="apple-touch-icon" href="assets/img/logo.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" defer />
+    <link rel="stylesheet" href="assets/css/intro.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
 </head>
 
 <body>
 
+    <!-- Main Content -->
+    <main class="comic">
+        <header class="title">
+            <!-- Title -->
+            <h1 id="title" data-step="1" data-intro="Click on the title to edit.">Comic Title</h1>
+            <!-- Author -->
+            <h2 id="author" data-step="2" data-intro="Same goes for the author name!">Author Name</h2>
+            <span id="editor-help">
+                <!-- Help -->
+                <button onclick="javascript:introJs().start();">Help</button>
+                <!-- Direct Link -->
+                <button id="direct-button" data-step="9"
+                    data-intro="Finally, click here to get the URL of your comic. Share it!">Get Direct Link</button>
+                <a href="#" id="direct-link"></a></span>
+            <!-- Twitter share button -->
+            <span id="twitter-button"></span>
+            <!-- TinyURL link -->
+            <!-- <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+            </script> -->
+        </header>
+        <!-- Comic strip -->
+        <article class="strip">
+            <!-- Frame 1 -->
+            <div class="frame" id="frame1" data-step="3"
+                data-intro="Each comic frame is controlled by the form underneath it." data-position="right">
+                <section id="pane1" class="">
+                    <header id="header1" class="textual header"></header>
+                    <img id="bg1" src="" class="bg_image" />
+                    <div class="bubble-top left">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-top right">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-bottom left">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-bottom right">
+                        <p class="textual"></p>
+                    </div>
+                </section>
+                <!-- Form 1 -->
+                <form id="form1">
+                    <p data-step="4" data-intro="Toggle a frame header, then click it to edit." data-position="top">
+                        <label for="form-heading">Heading:</label>
+                        <input id="form-heading" type="checkbox" /></p>
+                    <p><label for="form-background">Background:</label>
+                        <select id="form-background" data-step="5"
+                            data-intro="Select a pre-defined background or enter an image's URL." data-position="top">
+                            <option value="none">None</option>
+                            <optgroup label="Custom Backgrounds">
+                                <option value="custom">Image (enter URL below)</option>
+                            </optgroup>
+                            <optgroup label="Preset Backgrounds">
+                                <option value="beach.jpg">Beach</option>
+                                <option value="belfast.jpg">Belfast</option>
+                                <option value="bluebells.jpg">Bluebells</option>
+                                <option value="cloudy_lake.jpg">Cloudy Lake</option>
+                                <option value="computer_class.jpg">Computer Class</option>
+                                <option value="country_lane.jpg">Country Lane</option>
+                                <option value="death_star.jpg">Death Star</option>
+                                <option value="doradus.jpg">Doradus</option>
+                                <option value="dunes.jpg">Dunes</option>
+                                <option value="edinburgh.jpg">Edinburgh</option>
+                                <option value="field.jpg">Field</option>
+                                <option value="fish.jpg">Fish</option>
+                                <option value="forest_lake.jpg">Forest Lake</option>
+                                <option value="forest_stream.jpg">Forest Stream</option>
+                                <option value="london.jpg">London</option>
+                                <option value="mars.jpg">Mars</option>
+                                <option value="monument_valley.jpg">Monument Valley</option>
+                                <option value="moon.jpg">Moon</option>
+                                <option value="mountain_river.jpg">Mountain River</option>
+                                <option value="office.jpg">Office</option>
+                                <option value="old_computer.jpg">Old Computer</option>
+                                <option value="pattern01.jpg">Pattern 01</option>
+                                <option value="pattern02.jpg">Pattern 02</option>
+                                <option value="pattern03.jpg">Pattern 03</option>
+                                <option value="pattern04.jpg">Pattern 04</option>
+                                <option value="pattern05.jpg">Pattern 05</option>
+                                <option value="pattern06.jpg">Pattern 06</option>
+                                <option value="phosphor_sea.jpg">Phosphor Sea</option>
+                                <option value="seaside.jpg">Seaside</option>
+                                <option value="skulls.jpg">Skulls</option>
+                                <option value="snow.jpg">Snow</option>
+                                <option value="sunset.jpg">Sunset</option>
+                                <option value="winter_sun.jpg">Winter Sun</option>
+                            </optgroup>
+                        </select></p>
+                    <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" data-step="6"
+                            data-intro="Add the URL to your custom image here." data-position="top" /></p>
+                    <p data-step="8" data-intro="Toggle speech bubbles, then click to edit." data-position="top">
+                        <label for="form-tl">Speech bubbles:</label><br />
+                        <input type="checkbox" value="lt" id="form-lt">Top Left
+                        <input type="checkbox" value="rt" id="form-rt">Top Right<br />
+                        <input type="checkbox" value="lb" id="form-lb">Bottom Left
+                        <input type="checkbox" value="rb" id="form-rb">Bottom Right</p>
+                    <p><button type="reset" id="reset-button">Reset</button></p>
+                </form>
+            </div>
+            <!-- Frame 2 -->
+            <div class="frame" id="frame2">
+                <section id="pane2" class="">
+                    <header id="header2" class="textual header"></header>
+                    <img id="bg2" src="" class="bg_image" />
+                    <div class="bubble-top left">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-top right">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-bottom left">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-bottom right">
+                        <p class="textual"></p>
+                    </div>
+                </section>
+                <!-- Form 2 -->
+                <form id="form2">
+                    <p><label for="form-heading">Heading:</label>
+                        <input id="form-heading" type="checkbox" /></p>
+                    <p><label for="form-background">Background:</label>
+                        <select id="form-background">
+                            <option value="none">None</option>
+                            <optgroup label="Custom Backgrounds">
+                                <option value="custom">Image (enter URL below)</option>
+                            </optgroup>
+                            <optgroup label="Preset Backgrounds">
+                                <option value="beach.jpg">Beach</option>
+                                <option value="belfast.jpg">Belfast</option>
+                                <option value="bluebells.jpg">Bluebells</option>
+                                <option value="cloudy_lake.jpg">Cloudy Lake</option>
+                                <option value="computer_class.jpg">Computer Class</option>
+                                <option value="country_lane.jpg">Country Lane</option>
+                                <option value="death_star.jpg">Death Star</option>
+                                <option value="doradus.jpg">Doradus</option>
+                                <option value="dunes.jpg">Dunes</option>
+                                <option value="edinburgh.jpg">Edinburgh</option>
+                                <option value="field.jpg">Field</option>
+                                <option value="fish.jpg">Fish</option>
+                                <option value="forest_lake.jpg">Forest Lake</option>
+                                <option value="forest_stream.jpg">Forest Stream</option>
+                                <option value="london.jpg">London</option>
+                                <option value="mars.jpg">Mars</option>
+                                <option value="monument_valley.jpg">Monument Valley</option>
+                                <option value="moon.jpg">Moon</option>
+                                <option value="mountain_river.jpg">Mountain River</option>
+                                <option value="office.jpg">Office</option>
+                                <option value="old_computer.jpg">Old Computer</option>
+                                <option value="pattern01.jpg">Pattern 01</option>
+                                <option value="pattern02.jpg">Pattern 02</option>
+                                <option value="pattern03.jpg">Pattern 03</option>
+                                <option value="pattern04.jpg">Pattern 04</option>
+                                <option value="pattern05.jpg">Pattern 05</option>
+                                <option value="pattern06.jpg">Pattern 06</option>
+                                <option value="phosphor_sea.jpg">Phosphor Sea</option>
+                                <option value="seaside.jpg">Seaside</option>
+                                <option value="skulls.jpg">Skulls</option>
+                                <option value="snow.jpg">Snow</option>
+                                <option value="sunset.jpg">Sunset</option>
+                                <option value="winter_sun.jpg">Winter Sun</option>
+                            </optgroup>
+                        </select></p>
+                    <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" data-step="6"
+                            data-intro="Add the URL to your custom image here." data-position="top" /></p>
+                    <p><label for="form-tl">Speech bubbles:</label><br />
+                        <input type="checkbox" value="lt" id="form-lt">Top Left
+                        <input type="checkbox" value="rt" id="form-rt">Top Right<br />
+                        <input type="checkbox" value="lb" id="form-lb">Bottom Left
+                        <input type="checkbox" value="rb" id="form-rb">Bottom Right</p>
+                    <p><button type="reset" id="reset-button">Reset</button></p>
+                </form>
+            </div>
+            <!-- Frame 3 -->
+            <div class="frame" id="frame3">
+                <section id="pane3" class="">
+                    <header id="header3" class="textual header"></header>
+                    <img id="bg3" src="" class="bg_image" />
+                    <div class="bubble-top left">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-top right">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-bottom left">
+                        <p class="textual"></p>
+                    </div>
+                    <div class="bubble-bottom right">
+                        <p class="textual"></p>
+                    </div>
+                </section>
+                <!-- Form 3 -->
+                <form id="form3">
+                    <p><label for="form-heading">Heading:</label>
+                        <input id="form-heading" type="checkbox" /></p>
+                    <p><label for="form-background">Background:</label>
+                        <select id="form-background">
+                            <option value="none">None</option>
+                            <optgroup label="Custom Backgrounds">
+                                <option value="custom">Image (enter URL below)</option>
+                            </optgroup>
+                            <optgroup label="Preset Backgrounds">
+                                <option value="beach.jpg">Beach</option>
+                                <option value="belfast.jpg">Belfast</option>
+                                <option value="bluebells.jpg">Bluebells</option>
+                                <option value="cloudy_lake.jpg">Cloudy Lake</option>
+                                <option value="computer_class.jpg">Computer Class</option>
+                                <option value="country_lane.jpg">Country Lane</option>
+                                <option value="death_star.jpg">Death Star</option>
+                                <option value="doradus.jpg">Doradus</option>
+                                <option value="dunes.jpg">Dunes</option>
+                                <option value="edinburgh.jpg">Edinburgh</option>
+                                <option value="field.jpg">Field</option>
+                                <option value="fish.jpg">Fish</option>
+                                <option value="forest_lake.jpg">Forest Lake</option>
+                                <option value="forest_stream.jpg">Forest Stream</option>
+                                <option value="london.jpg">London</option>
+                                <option value="mars.jpg">Mars</option>
+                                <option value="monument_valley.jpg">Monument Valley</option>
+                                <option value="moon.jpg">Moon</option>
+                                <option value="mountain_river.jpg">Mountain River</option>
+                                <option value="office.jpg">Office</option>
+                                <option value="old_computer.jpg">Old Computer</option>
+                                <option value="pattern01.jpg">Pattern 01</option>
+                                <option value="pattern02.jpg">Pattern 02</option>
+                                <option value="pattern03.jpg">Pattern 03</option>
+                                <option value="pattern04.jpg">Pattern 04</option>
+                                <option value="pattern05.jpg">Pattern 05</option>
+                                <option value="pattern06.jpg">Pattern 06</option>
+                                <option value="phosphor_sea.jpg">Phosphor Sea</option>
+                                <option value="seaside.jpg">Seaside</option>
+                                <option value="skulls.jpg">Skulls</option>
+                                <option value="snow.jpg">Snow</option>
+                                <option value="sunset.jpg">Sunset</option>
+                                <option value="winter_sun.jpg">Winter Sun</option>
+                            </optgroup>
+                        </select></p>
+                    <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" data-step="6"
+                            data-intro="Add the URL to your custom image here." data-position="top" /></p>
+                    <p><label for="form-tl">Speech bubbles:</label><br />
+                        <input type="checkbox" value="lt" id="form-lt">Top Left
+                        <input type="checkbox" value="rt" id="form-rt">Top Right<br />
+                        <input type="checkbox" value="lb" id="form-lb">Bottom Left
+                        <input type="checkbox" value="rb" id="form-rb">Bottom Right</p>
+                    <p><button type="reset" id="reset-button">Reset</button></p>
+                </form>
+            </div>
+        </article>
+        <!-- Footer -->
+        <footer class="smallprint">
+            <p>Team HackLikeAGirl
+            </p>
+        </footer>
+    </main>
+
+    <!-- Twitter share -->
+    <script>window.twttr = (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return t; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function (f) { t._e.push(f); }; return t;
+        }(document, "script", "twitter-wjs"));</script>
+
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
+    <script src="assets/js/intro.min.js"></script>
+    <script src="assets/js/qs.js"></script>
     <script src="assets/js/index.js"></script>
 
 </body>
