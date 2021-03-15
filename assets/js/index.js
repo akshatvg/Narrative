@@ -323,7 +323,10 @@ function setup_editor() {
         form.find('#form-background').change(function (e) {
             var bg = $(this).find("option:selected").attr('value');
             form.find('#form-image-url').prop('disabled', true);
+            form.find("#recordAudio").prop("disabled", true);
+            form.find("#stopRecordAudio").prop("disabled", true);
             if (bg === 'custom') {
+                // Custom
                 pane_background.show();
                 var custom_url = form.find('#form-image-url');
                 custom_url.prop('disabled', false);
@@ -333,11 +336,79 @@ function setup_editor() {
                 }
                 custom_url.focus();
             } else if (bg === 'none') {
+                // None
                 pane_background.hide();
+            } else if (bg === 'voice') {
+                // Voice
+                pane_background.show();
+                var record_audio = form.find('#recordAudio');
+                var stop_record_audio = form.find('#stopRecordAudio');
+                record_audio.prop('disabled', false);
+                stop_record_audio.prop('disabled', false);
+                // Callback hndlr pending
             } else {
                 pane_background.show();
                 pane_background.attr('src', 'assets/bg/' + bg);
             }
+        });
+        // Start record click function
+        form.find('.recordAudio').click(function (e) {
+            if (Content.length) {
+                Content += ' ';
+            }
+            recognition.start();
+        });
+        // Stop record click function
+        form.find('.stopRecordAudio').click(function () {
+            recognition.onresult = function (event) {
+                var current = event.resultIndex;
+                var transcript = event.results[current][0].transcript;
+                Content = Content + transcript;
+                Content = Content;
+                console.log(Content);
+                // Custom Search API query from voice
+                // var JSElement = document.createElement('script');
+                // JSElement.src = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyDWv1_9RBLA_VjnChYzQYIa-Z_r1iSjc4w&cx=016220867362134571083:ntcgj0p32rg&q=' + Content;
+                // $('#content-hidden').html(JSElement);
+                var xh = new XMLHttpRequest();
+                xh.open(
+                    "GET",
+                    "https://www.googleapis.com/customsearch/v1?key=AIzaSyDWv1_9RBLA_VjnChYzQYIa-Z_r1iSjc4w&cx=016220867362134571083:ntcgj0p32rg&q=" + Content,
+                    true
+                );
+                xh.setRequestHeader("Content-Type", "application/json");
+                xh.send();
+                xh.onload = function () {
+                    if (this.status == 200) {
+                        // Response from Custom Search API
+                        var response = JSON.parse(this.responseText);
+                        var item = response.items[0];
+                        var url = item.pagemap.cse_image[0].src;
+                        console.log("Response URL is: " + url);
+                        var data = {
+                            url
+                        }
+                        // POST request for image filtering
+                        var xhr = new XMLHttpRequest();
+                        xhr.open("POST", "https://narrative-comics.herokuapp.com/apply/filter/", true);
+                        xhr.setRequestHeader("Content-Type", "application/json");
+                        xhr.send(JSON.stringify(data));
+                        xhr.onload = function () {
+                            if (this.status == 200) {
+                                var data = JSON.parse(this.responseText);
+                                console.log("Filter Image URL: https://narrative-comics.herokuapp.com" + data.image);
+                                pane_background.attr('src', "https://narrative-comics.herokuapp.com" + data.image);
+                            } else {
+                                console.log("Something went wrong.");
+                            }
+                        };
+                    } else {
+                        console.log(this.responseText);
+                    }
+                };
+                Content = "";
+            };
+            recognition.stop();
         });
         // URL image
         form.find('.custom-image').on('input', function (e) {
@@ -581,68 +652,13 @@ recognition.onerror = function (event) {
     }
 }
 
-// Record audio
-function recordAudio() {
-    if (Content.length) {
-        Content += ' ';
-    }
-    recognition.start();
-}
-
-// Stop recording
-function stopRecordAudio() {
-    recognition.onresult = function (event) {
-
-        var current = event.resultIndex;
-
-        var transcript = event.results[current][0].transcript;
-
-        Content = Content + transcript;
-        Content = Content;
-
-        console.log(Content);
-
-        // Custom Search API query from voice
-        var JSElement = document.createElement('script');
-        JSElement.src = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyDWv1_9RBLA_VjnChYzQYIa-Z_r1iSjc4w&cx=016220867362134571083:ntcgj0p32rg&q=' + Content + '&callback=hndlr';
-        $('#content-hidden').html(JSElement);
-
-        Content = "";
-
-    };
-    recognition.stop();
-}
-
-// Response from Custom Search API
-function hndlr(response) {
-    var item = response.items[0];
-    var url = item.pagemap.cse_image[0].src;
-    console.log("Response URL is: " + url);
-    var data = {
-        url
-    }
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://narrative-comics.herokuapp.com/apply/filter/", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(data));
-    xhr.onload = function () {
-        if (this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            console.log("Filter Image URL: https://narrative-comics.herokuapp.com" + data.image);
-            $('#content').html("<img src='https://narrative-comics.herokuapp.com" + data.image + "' alt='' class='img-responsive' />");
-        } else {
-            console.log("Something went wrong.");
-        }
-    };
-}
-
 // Hide and show rows
-$("#addRow").click(function() {
+$("#addRow").click(function () {
     $("#row2").show();
 });
 
-$("#removeRow").click(function() {
+$("#removeRow").click(function () {
     $("#row2").hide();
 });
 
-console.clear();
+// console.clear();

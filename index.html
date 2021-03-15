@@ -41,18 +41,16 @@
                         <!-- Help -->
                         <button onclick="javascript:introJs().start();">Help</button>
                         <!-- Direct Link -->
-                        <button id="direct-button" data-step="8"
+                        <button id="direct-button" data-step="10"
                             data-intro="Finally, click here to get the URL of your comic. Share it!">Get Direct
                             Link</button>
                         <a href="#" id="direct-link"></a>
                         <!-- Add row -->
-                        <button id="addRow"><i class="fa fa-plus"></i> Row</button>
+                        <button id="addRow" data-step="8" data-intro="Add another row to your strip."><i
+                                class="fa fa-plus"></i> Row</button>
                         <!-- Remove row -->
-                        <button id="removeRow"><i class="fa fa-minus"></i> Row</button>
-                        <!-- Record Audio -->
-                        <button id="recordAudio" onclick="recordAudio();"><i class="fa fa-microphone"></i></button>
-                        <!-- Stop Record Audio -->
-                        <button id="stopRecordAudio" onclick="stopRecordAudio();"><i class="fa fa-stop"></i></button>
+                        <button id="removeRow" data-step="9" data-intro="Or remove it!"><i class="fa fa-minus"></i>
+                            Row</button>
                     </span>
                     <!-- Twitter share button -->
                     <span id="twitter-button"></span>
@@ -92,11 +90,12 @@
                                 <input id="form-heading" type="checkbox" /></p>
                             <p><label for="form-background">Background:</label>
                                 <select id="form-background" data-step="5"
-                                    data-intro="Select a pre-defined background or enter an image's URL."
+                                    data-intro="Select a pre-defined background or enter an image's URL or just say what you want."
                                     data-position="top">
                                     <option value="none">None</option>
                                     <optgroup label="Custom Backgrounds">
                                         <option value="custom">Image (enter URL below)</option>
+                                        <option value="voice">Voice (start recording below)</option>
                                     </optgroup>
                                     <optgroup label="Preset Backgrounds">
                                         <option value="beach.jpg">Beach</option>
@@ -135,6 +134,13 @@
                                     </optgroup>
                                 </select></p>
                             <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" /></p>
+                            <!-- Record Audio -->
+                            <button id="recordAudio" disabled="disabled" class="recordAudio" type="button"><i
+                                    class="fa fa-microphone"></i></button>
+                            <!-- Stop Record Audio -->
+                            <button id="stopRecordAudio" disabled="disabled" class="stopRecordAudio" type="button"><i
+                                    class="fa fa-stop"></i></button>
+                            <br /> <br />
                             <p data-step="7" data-intro="Toggle speech bubbles, then click to edit."
                                 data-position="top">
                                 <label for="form-tl">Speech bubbles:</label><br />
@@ -185,6 +191,7 @@
                                     <option value="none">None</option>
                                     <optgroup label="Custom Backgrounds">
                                         <option value="custom">Image (enter URL below)</option>
+                                        <option value="voice">Voice (start recording below)</option>
                                     </optgroup>
                                     <optgroup label="Preset Backgrounds">
                                         <option value="beach.jpg">Beach</option>
@@ -223,6 +230,13 @@
                                     </optgroup>
                                 </select></p>
                             <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" /></p>
+                            <!-- Record Audio -->
+                            <button id="recordAudio" disabled="disabled" class="recordAudio" type="button"><i
+                                    class="fa fa-microphone"></i></button>
+                            <!-- Stop Record Audio -->
+                            <button id="stopRecordAudio" disabled="disabled" class="stopRecordAudio" type="button"><i
+                                    class="fa fa-stop"></i></button>
+                            <br /> <br />
                             <p><label for="form-tl">Speech bubbles:</label><br />
                                 <div class="row">
                                     <div class="col s6">
@@ -271,6 +285,7 @@
                                     <option value="none">None</option>
                                     <optgroup label="Custom Backgrounds">
                                         <option value="custom">Image (enter URL below)</option>
+                                        <option value="voice">Voice (start recording below)</option>
                                     </optgroup>
                                     <optgroup label="Preset Backgrounds">
                                         <option value="beach.jpg">Beach</option>
@@ -311,6 +326,13 @@
                             <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled"
                                     data-step="6" data-intro="Add the URL to your custom image here."
                                     data-position="top" /></p>
+                            <!-- Record Audio -->
+                            <button id="recordAudio" disabled="disabled" class="recordAudio" type="button"><i
+                                    class="fa fa-microphone"></i></button>
+                            <!-- Stop Record Audio -->
+                            <button id="stopRecordAudio" disabled="disabled" class="stopRecordAudio" type="button"><i
+                                    class="fa fa-stop"></i></button>
+                            <br /> <br />
                             <p><label for="form-tl">Speech bubbles:</label><br />
                                 <div class="row">
                                     <div class="col s6">
@@ -363,6 +385,7 @@
                                         <option value="none">None</option>
                                         <optgroup label="Custom Backgrounds">
                                             <option value="custom">Image (enter URL below)</option>
+                                            <option value="voice">Voice (start recording below)</option>
                                         </optgroup>
                                         <optgroup label="Preset Backgrounds">
                                             <option value="beach.jpg">Beach</option>
@@ -402,6 +425,13 @@
                                     </select></p>
                                 <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" />
                                 </p>
+                                <!-- Record Audio -->
+                                <button id="recordAudio" disabled="disabled" class="recordAudio" type="button"><i
+                                        class="fa fa-microphone"></i></button>
+                                <!-- Stop Record Audio -->
+                                <button id="stopRecordAudio" disabled="disabled" class="stopRecordAudio"
+                                    type="button"><i class="fa fa-stop"></i></button>
+                                <br /> <br />
                                 <p>
                                     <label for="form-tl">Speech bubbles:</label><br />
                                     <div class="row">
@@ -451,6 +481,7 @@
                                         <option value="none">None</option>
                                         <optgroup label="Custom Backgrounds">
                                             <option value="custom">Image (enter URL below)</option>
+                                            <option value="voice">Voice (start recording below)</option>
                                         </optgroup>
                                         <optgroup label="Preset Backgrounds">
                                             <option value="beach.jpg">Beach</option>
@@ -490,6 +521,13 @@
                                     </select></p>
                                 <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" />
                                 </p>
+                                <!-- Record Audio -->
+                                <button id="recordAudio" disabled="disabled" class="recordAudio" type="button"><i
+                                        class="fa fa-microphone"></i></button>
+                                <!-- Stop Record Audio -->
+                                <button id="stopRecordAudio" disabled="disabled" class="stopRecordAudio"
+                                    type="button"><i class="fa fa-stop"></i></button>
+                                <br /> <br />
                                 <p><label for="form-tl">Speech bubbles:</label><br />
                                     <div class="row">
                                         <div class="col s6">
@@ -538,6 +576,7 @@
                                         <option value="none">None</option>
                                         <optgroup label="Custom Backgrounds">
                                             <option value="custom">Image (enter URL below)</option>
+                                            <option value="voice">Voice (start recording below)</option>
                                         </optgroup>
                                         <optgroup label="Preset Backgrounds">
                                             <option value="beach.jpg">Beach</option>
@@ -577,6 +616,13 @@
                                     </select></p>
                                 <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" />
                                 </p>
+                                <!-- Record Audio -->
+                                <button id="recordAudio" disabled="disabled" class="recordAudio" type="button"><i
+                                        class="fa fa-microphone"></i></button>
+                                <!-- Stop Record Audio -->
+                                <button id="stopRecordAudio" disabled="disabled" class="stopRecordAudio"
+                                    type="button"><i class="fa fa-stop"></i></button>
+                                <br /> <br />
                                 <p><label for="form-tl">Speech bubbles:</label><br />
                                     <div class="row">
                                         <div class="col s6">
@@ -627,7 +673,6 @@
         crossorigin="anonymous"></script>
     <script src="assets/js/intro.min.js"></script>
     <script src="assets/js/qs.js"></script>
-    <script src="assets/js/rows.js"></script>
     <script src="assets/js/index.js"></script>
 
 </body>
