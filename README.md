@@ -46,7 +46,7 @@ Narrative is a web app where the user can speak/ type a story which will get con
 
 ## How it works
 1. JavaScript Web Speech API for audio transcription (default with HTML5)
-2. The transcribed or written text is searched for relevant images using the Custom Search API in GCP and a choice of 4 images are returned to user which can be used as the comic background
+2. The transcribed or written text is searched for relevant images using the Custom Search API in GCP and an image is returned to user which can be used as the comic background
 3. Since we get human like images, we cartoonify the images using OpenCV
 4. The core functionalities like adding bubbles or text-boxes or headings or sharing are done through Vanilla JS and jQuery.
 
@@ -61,11 +61,19 @@ Narrative is a web app where the user can speak/ type a story which will get con
 ## Requirements
 The source code of this project is written in **`HTML/CSS/JS`**. So, you do not require anything extra to run this project.
 
-## Instructions
+## Instructions to run front-end
 
 [![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https:/?narrative.akshatvg.com)
 
 Extract the folder and run `index.html`
+
+## Instructions to run back-end
+```bash
+$ git clone https://github.com/akshatvg/Narrative
+$ cd Narrative
+$ pip3 install -r requirements.txt
+$ python3 manage.py runserver
+```
 
 ## Contributors
 - [Akshat Gupta](https://github.com/akshatvg)
