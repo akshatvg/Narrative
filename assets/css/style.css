@@ -420,3 +420,7 @@ button:hover {
         linear-gradient(#17be55, #25d366) 14% 84%/16% 16% no-repeat,
         radial-gradient(#17be55 60%, transparent 0);
 }
+
+#content-hidden {
+    display: none;
+}
