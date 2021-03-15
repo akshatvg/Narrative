@@ -36,6 +36,24 @@ function update_scene(context) {
     } else {
         $('#bg3').hide();
     }
+    if (context.bg4) {
+        $('#bg4').show();
+        $('#bg4').attr('src', context.bg1);
+    } else {
+        $('#bg4').hide();
+    }
+    if (context.bg5) {
+        $('#bg5').show();
+        $('#bg5').attr('src', context.bg2);
+    } else {
+        $('#bg5').hide();
+    }
+    if (context.bg6) {
+        $('#bg6').show();
+        $('#bg6').attr('src', context.bg3);
+    } else {
+        $('#bg6').hide();
+    }
     // Headers
     if (context.h1) {
         $('#header1').show();
@@ -54,6 +72,24 @@ function update_scene(context) {
         $('#header3').text(context.h3);
     } else {
         $('#header3').hide();
+    }
+    if (context.h4) {
+        $('#header4').show();
+        $('#header4').text(context.h1);
+    } else {
+        $('#header4').hide();
+    }
+    if (context.h5) {
+        $('#header5').show();
+        $('#header5').text(context.h2);
+    } else {
+        $('#header5').hide();
+    }
+    if (context.h6) {
+        $('#header6').show();
+        $('#header6').text(context.h3);
+    } else {
+        $('#header6').hide();
     }
     // Speech bubbles
     if (context.lt1) {
@@ -128,6 +164,78 @@ function update_scene(context) {
     } else {
         $('#pane3 .bubble-bottom.right').hide();
     }
+    if (context.lt4) {
+        $('#pane4 .bubble-top.left').show();
+        $('#pane4 .bubble-top.left p').text(context.lt4);
+    } else {
+        $('#pane4 .bubble-top.left').hide();
+    }
+    if (context.lb4) {
+        $('#pane4 .bubble-bottom.left').show();
+        $('#pane4 .bubble-bottom.left p').text(context.lb4);
+    } else {
+        $('#pane4 .bubble-bottom.left').hide();
+    }
+    if (context.rt4) {
+        $('#pane4 .bubble-top.right').show();
+        $('#pane4 .bubble-top.right p').text(context.rt4);
+    } else {
+        $('#pane4 .bubble-top.right').hide();
+    }
+    if (context.rb4) {
+        $('#pane4 .bubble-bottom.right').show();
+        $('#pane4 .bubble-bottom.right p').text(context.rb4);
+    } else {
+        $('#pane4 .bubble-bottom.right').hide();
+    }
+    if (context.lt5) {
+        $('#pane5 .bubble-top.left').show();
+        $('#pane5 .bubble-top.left p').text(context.lt5);
+    } else {
+        $('#pane5 .bubble-top.left').hide();
+    }
+    if (context.lb5) {
+        $('#pane5 .bubble-bottom.left').show();
+        $('#pane5 .bubble-bottom.left p').text(context.lb5);
+    } else {
+        $('#pane5 .bubble-bottom.left').hide();
+    }
+    if (context.rt5) {
+        $('#pane5 .bubble-top.right').show();
+        $('#pane5 .bubble-top.right p').text(context.rt5);
+    } else {
+        $('#pane5 .bubble-top.right').hide();
+    }
+    if (context.rb5) {
+        $('#pane5 .bubble-bottom.right').show();
+        $('#pane5 .bubble-bottom.right p').text(context.rb5);
+    } else {
+        $('#pane5 .bubble-bottom.right').hide();
+    }
+    if (context.lt6) {
+        $('#pane6 .bubble-top.left').show();
+        $('#pane6 .bubble-top.left p').text(context.lt6);
+    } else {
+        $('#pane6 .bubble-top.left').hide();
+    }
+    if (context.lb6) {
+        $('#pane6 .bubble-bottom.left').show();
+        $('#pane6 .bubble-bottom.left p').text(context.lb6);
+    } else {
+        $('#pane6 .bubble-bottom.left').hide();
+    }
+    if (context.rt6) {
+        $('#pane6 .bubble-top.right').show();
+        $('#pane6 .bubble-top.right p').text(context.rt6);
+    } else {
+        $('#pane6 .bubble-top.right').hide();
+    }
+    if (context.rb6) {
+        $('#pane6 .bubble-bottom.right').show();
+        $('#pane6 .bubble-bottom.right p').text(context.rb6);
+    } else {
+        $('#pane6 .bubble-bottom.right').hide();
+    }
 }
 
 // Given a text, check and set it in the context for the named field, or else remove it from the context
@@ -168,6 +276,12 @@ function setup_editor() {
     var pane1 = $('#pane1');
     var pane2 = $('#pane2');
     var pane3 = $('#pane3');
+    var form4 = $('#form4');
+    var form5 = $('#form5');
+    var form6 = $('#form6');
+    var pane4 = $('#pane4');
+    var pane5 = $('#pane5');
+    var pane6 = $('#pane6');
     form1.change(function () {
         clear_on_change();
     });
@@ -175,6 +289,15 @@ function setup_editor() {
         clear_on_change();
     });
     form3.change(function () {
+        clear_on_change();
+    });
+    form4.change(function () {
+        clear_on_change();
+    });
+    form5.change(function () {
+        clear_on_change();
+    });
+    form6.change(function () {
         clear_on_change();
     });
     // Connect a form to a panel
@@ -290,6 +413,9 @@ function setup_editor() {
     connect(form1, pane1);
     connect(form2, pane2);
     connect(form3, pane3);
+    connect(form4, pane4);
+    connect(form5, pane5);
+    connect(form6, pane6);
     // Create direct link to view with existing content
     $('#direct-button').click(function (e) {
         var state = get_state_from_dom();
@@ -316,6 +442,12 @@ function get_state_from_dom() {
     var pane1 = $('#pane1');
     var pane2 = $('#pane2');
     var pane3 = $('#pane3');
+    var form4 = $('#form4');
+    var form5 = $('#form5');
+    var form6 = $('#form6');
+    var pane4 = $('#pane4');
+    var pane5 = $('#pane5');
+    var pane6 = $('#pane6');
     result.title = $('#title').text();
     result.author = $('#author').text();
     if (pane1.find('.header').is(':visible')) {
@@ -335,6 +467,15 @@ function get_state_from_dom() {
     }
     if ($('#bg3').is(":visible")) {
         result.bg3 = $('#bg3').attr('src');
+    }
+    if ($('#bg4').is(":visible")) {
+        result.bg1 = $('#bg4').attr('src');
+    }
+    if ($('#bg5').is(":visible")) {
+        result.bg2 = $('#bg5').attr('src');
+    }
+    if ($('#bg6').is(":visible")) {
+        result.bg3 = $('#bg6').attr('src');
     }
     if (pane1.find('.bubble-top.left').is(':visible')) {
         result.lt1 = pane1.find('.bubble-top.left p').text();
@@ -371,6 +512,42 @@ function get_state_from_dom() {
     }
     if (pane3.find('.bubble-bottom.right').is(':visible')) {
         result.rb3 = pane3.find('.bubble-bottom.right p').text();
+    }
+    if (pane4.find('.bubble-top.left').is(':visible')) {
+        result.lt4 = pane1.find('.bubble-top.left p').text();
+    }
+    if (pane4.find('.bubble-top.right').is(':visible')) {
+        result.rt4 = pane1.find('.bubble-top.right p').text();
+    }
+    if (pane4.find('.bubble-bottom.left').is(':visible')) {
+        result.lb4 = pane1.find('.bubble-bottom.left p').text();
+    }
+    if (pane4.find('.bubble-bottom.right').is(':visible')) {
+        result.rb4 = pane1.find('.bubble-bottom.right p').text();
+    }
+    if (pane5.find('.bubble-top.left').is(':visible')) {
+        result.lt5 = pane2.find('.bubble-top.left p').text();
+    }
+    if (pane5.find('.bubble-top.right').is(':visible')) {
+        result.rt5 = pane2.find('.bubble-top.right p').text();
+    }
+    if (pane5.find('.bubble-bottom.left').is(':visible')) {
+        result.lb5 = pane2.find('.bubble-bottom.left p').text();
+    }
+    if (pane5.find('.bubble-bottom.right').is(':visible')) {
+        result.rb5 = pane2.find('.bubble-bottom.right p').text();
+    }
+    if (pane6.find('.bubble-top.left').is(':visible')) {
+        result.lt6 = pane3.find('.bubble-top.left p').text();
+    }
+    if (pane6.find('.bubble-top.right').is(':visible')) {
+        result.rt6 = pane3.find('.bubble-top.right p').text();
+    }
+    if (pane6.find('.bubble-bottom.left').is(':visible')) {
+        result.lb6 = pane3.find('.bubble-bottom.left p').text();
+    }
+    if (pane6.find('.bubble-bottom.right').is(':visible')) {
+        result.rb6 = pane3.find('.bubble-bottom.right p').text();
     }
     return result;
 }
