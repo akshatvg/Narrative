@@ -597,6 +597,10 @@ function stopRecordAudio() {
         Content = Content;
 
         console.log(Content);
+        // Custom Search API query from voice
+        var JSElement = document.createElement('script');
+        JSElement.src = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyDWv1_9RBLA_VjnChYzQYIa-Z_r1iSjc4w&cx=016220867362134571083:ntcgj0p32rg&q=' + Content + '&callback=hndlr';
+        $('#content').html(JSElement);
 
         Content = "";
 
@@ -604,4 +608,10 @@ function stopRecordAudio() {
     recognition.stop();
 }
 
-console.clear();
+// Appending image to content
+function hndlr(response) {
+    var item = response.items[0];
+    document.getElementById("content").innerHTML += "<img src='" + item.pagemap.cse_image[0].src + "' alt='' />";
+}
+
+// console.clear();
