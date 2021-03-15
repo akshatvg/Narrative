@@ -75,19 +75,19 @@ function update_scene(context) {
     }
     if (context.h4) {
         $('#header4').show();
-        $('#header4').text(context.h1);
+        $('#header4').text(context.h4);
     } else {
         $('#header4').hide();
     }
     if (context.h5) {
         $('#header5').show();
-        $('#header5').text(context.h2);
+        $('#header5').text(context.h5);
     } else {
         $('#header5').hide();
     }
     if (context.h6) {
         $('#header6').show();
-        $('#header6').text(context.h3);
+        $('#header6').text(context.h6);
     } else {
         $('#header6').hide();
     }
