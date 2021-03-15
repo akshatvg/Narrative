@@ -1,5 +1,5 @@
 body {
-    background-color: #5DE0E6;
+    background-color: #037BFE;
 }
 
 .controls label {
@@ -58,7 +58,9 @@ section iframe {
     display: block;
     border-bottom: 2px solid #000;
     background-color: #eee;
-    padding: .25em 1em
+    padding: .35em 1.2em;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .title h1,
@@ -387,20 +389,20 @@ a:active {
 
 button {
     color: whitesmoke;
-    background-color: rgba(93, 223, 230, 0.699);
-    border: 1px solid #FFDE58;
+    background-color: #037BFE;
+    border: 1px solid #1B429D;
     font-weight: bolder;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 6px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 button:hover {
-    color: #5DE0E6;
+    color: #1B429D;
     background-color: whitesmoke;
-    border: 1px solid #FFDE58;
+    border: 1px solid #1B429D;
     font-weight: bolder;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 6px;
     font-family: Arial, Helvetica, sans-serif;
 }
