@@ -1,12 +1,10 @@
-# Repo Name
+# Narrative
 
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/akshatvg/Narrative?logo=github&style=social)](https://github.com/akshatvg/) [![GitHub last commit](https://img.shields.io/github/last-commit/akshatvg/Narrative?style=social&logo=git)](https://github.com/akshatvg/) [![GitHub stars](https://img.shields.io/github/stars/akshatvg/Narrative?style=social)](https://github.com/akshatvg/Narrative/stargazers) [![GitHub forks](https://img.shields.io/github/forks/akshatvg/Narrative?style=social&logo=git)](https://github.com/akshatvg/Narrative/network)
 
-With Narrative, anyone can express themselves creatively and make exciting comics in minutes through voice based commands.
-
 <p align="center">
 <a href="https://narrative.akshatvg.com">
-<img src="assets/img/border-logo.png" width="200px" alt="Narrative Logo"/>
+<img src="assets/img/border-logo.png" width="400px" alt="Narrative Logo"/>
 </a>
 </p>
 
@@ -15,10 +13,52 @@ With Narrative, anyone can express themselves creatively and make exciting comic
 #### Link for [demo](https://narrative.akshatvg.com) 
 [![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://narrative.akshatvg.com)
 
+## Introduction
+Remember when reading the newest edition of Tintin or Archies or Tinkle was the highlight of your day? With the writing and publishing trends of comics going down, we are here to save the day with a technological twist.
+
+With **Narrative**, anyone can express themself creatively and make exciting comics in minutes through voice based commands and a simple UI.
+
+## About Narrative
+Narrative is a web app where the user can speak/ type a story which will get converted into relevant comic style images where you can also add narrative text boxes and character speech bubbles.
+
+## Features
+- Speech to Text
+- Text to Image
+- Cartoonification
+- Real time generation
+- Eliminates need to know how to draw
+- Share on Twitter
+- Share on WhatsApp
+- Simple UI
+- Help mode
+
+
+## Applications
+- Artists who relied on drawing and drafting all their content themselves have been suffering huge financial losses since they haven't been able to adapt to the digital trends. This means lesser number of copies sold and wastage of paper. Through our technological twist, the same non-tech-savvy artists will be able to make digital comics.
+- Creative youth like us who have ideas but are too lazy to write and pen down their ideas will be able to express themselves better.
+- Utilisation of time during COVID- an idle mind is the devil's playground.
+
+
+## Marketing and business model
+- We intend to keep the product free for at least a year to ensure we get the marketing we deserve- happy and long lasting user retention is our goal.
+- We will charge minor subscription fees after a month's free trial (Freemium model) to keep the servers running.
+- Major source of our revenue will be by running advertisements on our site.
+
+## How it works
+1. JavaScript Web Speech API for audio transcription (default with HTML5)
+2. The transcribed or written text is searched for relevant images using the Custom Search API in GCP and a choice of 4 images are returned to user which can be used as the comic background
+3. Since we get human like images, we cartoonify the images using OpenCV
+4. The core functionalities like adding bubbles or text-boxes or headings or sharing are done through Vanilla JS and jQuery.
+
+## Tech Stack
+- **Front-end:** HTML, CSS, JavaScript, jQuery
+- **Back-end:** Django with PostgreSQL
+- **Design and PPT:** AdobeXD
+- **Deployment:** Amazon Web Services and Netlify
+- **Image API**: *Custom Search API* on Google Cloud Platform and *Custom Search Engine* on [cse.google.com/cse/all](https://cse.google.com/cse/all)
+- **Cartoonification:** OpenCV
+
 ## Requirements
-
-[![GitHub top language](https://img.shields.io/github/languages/top/akshatvg/Narrative?logo=javascript&style=social)](https://github.com/akshatvg/)
-
 The source code of this project is written in **`HTML/CSS/JS`**. So, you do not require anything extra to run this project.
 
 ## Instructions

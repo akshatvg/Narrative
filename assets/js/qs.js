@@ -39,7 +39,8 @@ function set_qs(settings) {
     }).done(function (data) {
         $('#direct-link').attr('href', data);
         $('#direct-link').text(data);
-        $('#twitter-button').html('<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Check out this comic by Narrative!" data-via="akshatvg" data-hashtags="narrative" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>');
+        $('#whatsapp-button').html('<a href="whatsapp://send?text=Check out this comic by Narrative at ' + data + ' 😍" data-action="share/whatsapp/share" target="_blank"><i class="fab fa-2x fa-whatsapp" id="whatsapp-share-btn"></i></a>');
+        $('#twitter-button').html('<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button mx-3" data-text="Check out this comic by Narrative!" data-via="akshatvg" data-hashtags="narrative" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>');
         twttr.widgets.load();
     });
 }

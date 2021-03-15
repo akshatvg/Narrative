@@ -406,3 +406,17 @@ button:hover {
     padding: 6px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#whatsapp-share-btn {
+    color: #fff;
+    background:
+        linear-gradient(#25d366, #25d366) 14% 84%/16% 16% no-repeat,
+        radial-gradient(#25d366 60%, transparent 0);
+}
+
+#whatsapp-share-btn:hover {
+    color: #fff;
+    background:
+        linear-gradient(#17be55, #25d366) 14% 84%/16% 16% no-repeat,
+        radial-gradient(#17be55 60%, transparent 0);
+}
