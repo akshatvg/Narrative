@@ -11,7 +11,7 @@
 ![Generic badge](https://img.shields.io/badge/Narrative-Modernising_Comics-orange) 
 
 #### Link for [demo](https://narrative.akshatvg.com) 
-[![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://narrative.akshatvg.com)
+[![Generic badge](https://img.shields.io/badge/view-video-orange)](https://www.youtube.com/watch?v=AHKhUQFZMb8m)
 
 ## Introduction
 Remember when reading the newest edition of Tintin or Archies or Tinkle was the highlight of your day? With the writing and publishing trends of comics going down, we are here to save the day with a technological twist.
