@@ -110,6 +110,4 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 
 MEDIA_URL = '/media/'
 
-CORS_ALLOWED_ORIGINS = ['*']
-
 django_heroku.settings(locals())
