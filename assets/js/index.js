@@ -658,4 +658,4 @@ $("#removeRow").click(function () {
     $("#row2").hide();
 });
 
-// console.clear();
+console.clear();
