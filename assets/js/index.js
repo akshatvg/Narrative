@@ -367,9 +367,6 @@ function setup_editor() {
                 Content = Content;
                 console.log(Content);
                 // Custom Search API query from voice
-                // var JSElement = document.createElement('script');
-                // JSElement.src = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyDWv1_9RBLA_VjnChYzQYIa-Z_r1iSjc4w&cx=016220867362134571083:ntcgj0p32rg&q=' + Content;
-                // $('#content-hidden').html(JSElement);
                 var xh = new XMLHttpRequest();
                 xh.open(
                     "GET",
