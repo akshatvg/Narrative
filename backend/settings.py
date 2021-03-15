@@ -14,6 +14,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -109,5 +110,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
 MEDIA_URL = '/media/'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 django_heroku.settings(locals())
