@@ -16,8 +16,8 @@ googleapis-common-protos==1.53.0
 gunicorn==20.0.4
 httplib2==0.19.0
 idna==2.10
-numpy==1.20.1
-opencv-python==4.5.1.48
+numpy
+opencv-python-headless==4.2.0.32
 packaging==20.9
 Pillow==8.0.1
 protobuf==3.15.6
@@ -29,7 +29,7 @@ python-resize-image==1.1.19
 pytz==2021.1
 requests==2.25.1
 rsa==4.7.2
-scipy==1.6.1
+scipy
 six==1.15.0
 sqlparse==0.4.1
 termcolor==1.1.0
