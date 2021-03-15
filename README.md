@@ -54,7 +54,7 @@ Narrative is a web app where the user can speak/ type a story which will get con
 - **Front-end:** HTML, CSS, JavaScript, jQuery
 - **Back-end:** Django with PostgreSQL
 - **Design and PPT:** AdobeXD
-- **Deployment:** Amazon Web Services and Netlify
+- **Deployment:** Heroku and Netlify
 - **Image API**: *Custom Search API* on Google Cloud Platform and *Custom Search Engine* on [cse.google.com/cse/all](https://cse.google.com/cse/all)
 - **Cartoonification:** OpenCV
 
