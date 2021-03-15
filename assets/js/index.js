@@ -568,10 +568,12 @@ $(document).ready(function () {
         setup_from_url();
         set_qs(QS);
     } else {
+        $("#row2").hide();
         setup_editor();
     };
 });
 
+// Can't recognise voice
 recognition.onerror = function (event) {
     if (event.error == 'no-speech') {
         console.log('Could you please repeat? I didn\'t get what you\'re saying.');
@@ -579,6 +581,7 @@ recognition.onerror = function (event) {
     }
 }
 
+// Record audio
 function recordAudio() {
     if (Content.length) {
         Content += ' ';
@@ -586,6 +589,7 @@ function recordAudio() {
     recognition.start();
 }
 
+// Stop recording
 function stopRecordAudio() {
     recognition.onresult = function (event) {
 
@@ -609,6 +613,7 @@ function stopRecordAudio() {
     recognition.stop();
 }
 
+// Response from Custom Search API
 function hndlr(response) {
     var item = response.items[0];
     var url = item.pagemap.cse_image[0].src;
@@ -631,4 +636,13 @@ function hndlr(response) {
     };
 }
 
-// console.clear();
+// Hide and show rows
+$("#addRow").click(function() {
+    $("#row2").show();
+});
+
+$("#removeRow").click(function() {
+    $("#row2").hide();
+});
+
+console.clear();
