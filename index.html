@@ -47,6 +47,8 @@
                         <a href="#" id="direct-link"></a>
                         <!-- Add row -->
                         <button id="addRow" onclick="addRow();"><i class="fa fa-plus"></i> Row</button>
+                        <!-- Remove row -->
+                        <button id="addRow" onclick="removeRow();"><i class="fa fa-minus"></i> Row</button>
                         <!-- Record Audio -->
                         <button id="recordAudio" onclick="recordAudio();"><i class="fa fa-microphone"></i></button>
                         <!-- Stop Record Audio -->
@@ -330,266 +332,272 @@
                             <p><button type="reset" id="reset-button">Reset</button></p>
                         </form>
                     </div>
-                    <!-- Frame 4 -->
-                    <div class="frame" id="frame4">
-                        <section id="pane4" class="">
-                            <header id="header4" class="textual header"></header>
-                            <img id="bg4" src="" class="bg_image" />
-                            <div class="bubble-top left">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-top right">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-bottom left">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-bottom right">
-                                <p class="textual"></p>
-                            </div>
-                        </section>
-                        <!-- Form 4 -->
-                        <form id="form4">
-                            <p>
-                                <label for="form-heading">Heading:</label>
-                                <input id="form-heading" type="checkbox" />
-                            </p>
-                            <p><label for="form-background">Background:</label>
-                                <select id="form-background">
-                                    <option value="none">None</option>
-                                    <optgroup label="Custom Backgrounds">
-                                        <option value="custom">Image (enter URL below)</option>
-                                    </optgroup>
-                                    <optgroup label="Preset Backgrounds">
-                                        <option value="beach.jpg">Beach</option>
-                                        <option value="belfast.jpg">Belfast</option>
-                                        <option value="bluebells.jpg">Bluebells</option>
-                                        <option value="cloudy_lake.jpg">Cloudy Lake</option>
-                                        <option value="computer_class.jpg">Computer Class</option>
-                                        <option value="country_lane.jpg">Country Lane</option>
-                                        <option value="death_star.jpg">Death Star</option>
-                                        <option value="doradus.jpg">Doradus</option>
-                                        <option value="dunes.jpg">Dunes</option>
-                                        <option value="edinburgh.jpg">Edinburgh</option>
-                                        <option value="field.jpg">Field</option>
-                                        <option value="fish.jpg">Fish</option>
-                                        <option value="forest_lake.jpg">Forest Lake</option>
-                                        <option value="forest_stream.jpg">Forest Stream</option>
-                                        <option value="london.jpg">London</option>
-                                        <option value="mars.jpg">Mars</option>
-                                        <option value="monument_valley.jpg">Monument Valley</option>
-                                        <option value="moon.jpg">Moon</option>
-                                        <option value="mountain_river.jpg">Mountain River</option>
-                                        <option value="office.jpg">Office</option>
-                                        <option value="old_computer.jpg">Old Computer</option>
-                                        <option value="pattern01.jpg">Pattern 01</option>
-                                        <option value="pattern02.jpg">Pattern 02</option>
-                                        <option value="pattern03.jpg">Pattern 03</option>
-                                        <option value="pattern04.jpg">Pattern 04</option>
-                                        <option value="pattern05.jpg">Pattern 05</option>
-                                        <option value="pattern06.jpg">Pattern 06</option>
-                                        <option value="phosphor_sea.jpg">Phosphor Sea</option>
-                                        <option value="seaside.jpg">Seaside</option>
-                                        <option value="skulls.jpg">Skulls</option>
-                                        <option value="snow.jpg">Snow</option>
-                                        <option value="sunset.jpg">Sunset</option>
-                                        <option value="winter_sun.jpg">Winter Sun</option>
-                                    </optgroup>
-                                </select></p>
-                            <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" /></p>
-                            <p>
-                                <label for="form-tl">Speech bubbles:</label><br />
-                                <div class="row">
-                                    <div class="col s6">
-                                        <input type="checkbox" value="lt" id="form-lt"> Top Left
-                                    </div>
-                                    <div class="col s6">
-                                        <input type="checkbox" value="rt" id="form-rt"> Top Right
-                                    </div>
+                    <!-- Row 2 -->
+                    <div id="row2">
+                        <!-- Frame 4 -->
+                        <div class="frame" id="frame4">
+                            <section id="pane4" class="">
+                                <header id="header4" class="textual header"></header>
+                                <img id="bg4" src="" class="bg_image" />
+                                <div class="bubble-top left">
+                                    <p class="textual"></p>
                                 </div>
-                                <div class="row">
-                                    <div class="col s6">
-                                        <input type="checkbox" value="lb" id="form-lb"> Bottom Left
-                                    </div>
-                                    <div class="col s6">
-                                        <input type="checkbox" value="rb" id="form-rb"> Bottom Right
-                                    </div>
+                                <div class="bubble-top right">
+                                    <p class="textual"></p>
                                 </div>
-                            </p>
-                            <p><button type="reset" id="reset-button">Reset</button></p>
-                        </form>
-                    </div>
-                    <!-- Frame 5 -->
-                    <div class="frame" id="frame5">
-                        <section id="pane5" class="">
-                            <header id="header5" class="textual header"></header>
-                            <img id="bg5" src="" class="bg_image" />
-                            <div class="bubble-top left">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-top right">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-bottom left">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-bottom right">
-                                <p class="textual"></p>
-                            </div>
-                        </section>
-                        <!-- Form 5 -->
-                        <form id="form5">
-                            <p><label for="form-heading">Heading:</label>
-                                <input id="form-heading" type="checkbox" /></p>
-                            <p><label for="form-background">Background:</label>
-                                <select id="form-background">
-                                    <option value="none">None</option>
-                                    <optgroup label="Custom Backgrounds">
-                                        <option value="custom">Image (enter URL below)</option>
-                                    </optgroup>
-                                    <optgroup label="Preset Backgrounds">
-                                        <option value="beach.jpg">Beach</option>
-                                        <option value="belfast.jpg">Belfast</option>
-                                        <option value="bluebells.jpg">Bluebells</option>
-                                        <option value="cloudy_lake.jpg">Cloudy Lake</option>
-                                        <option value="computer_class.jpg">Computer Class</option>
-                                        <option value="country_lane.jpg">Country Lane</option>
-                                        <option value="death_star.jpg">Death Star</option>
-                                        <option value="doradus.jpg">Doradus</option>
-                                        <option value="dunes.jpg">Dunes</option>
-                                        <option value="edinburgh.jpg">Edinburgh</option>
-                                        <option value="field.jpg">Field</option>
-                                        <option value="fish.jpg">Fish</option>
-                                        <option value="forest_lake.jpg">Forest Lake</option>
-                                        <option value="forest_stream.jpg">Forest Stream</option>
-                                        <option value="london.jpg">London</option>
-                                        <option value="mars.jpg">Mars</option>
-                                        <option value="monument_valley.jpg">Monument Valley</option>
-                                        <option value="moon.jpg">Moon</option>
-                                        <option value="mountain_river.jpg">Mountain River</option>
-                                        <option value="office.jpg">Office</option>
-                                        <option value="old_computer.jpg">Old Computer</option>
-                                        <option value="pattern01.jpg">Pattern 01</option>
-                                        <option value="pattern02.jpg">Pattern 02</option>
-                                        <option value="pattern03.jpg">Pattern 03</option>
-                                        <option value="pattern04.jpg">Pattern 04</option>
-                                        <option value="pattern05.jpg">Pattern 05</option>
-                                        <option value="pattern06.jpg">Pattern 06</option>
-                                        <option value="phosphor_sea.jpg">Phosphor Sea</option>
-                                        <option value="seaside.jpg">Seaside</option>
-                                        <option value="skulls.jpg">Skulls</option>
-                                        <option value="snow.jpg">Snow</option>
-                                        <option value="sunset.jpg">Sunset</option>
-                                        <option value="winter_sun.jpg">Winter Sun</option>
-                                    </optgroup>
-                                </select></p>
-                            <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" /></p>
-                            <p><label for="form-tl">Speech bubbles:</label><br />
-                                <div class="row">
-                                    <div class="col s6">
-                                        <input type="checkbox" value="lt" id="form-lt"> Top Left
-                                    </div>
-                                    <div class="col s6">
-                                        <input type="checkbox" value="rt" id="form-rt"> Top Right
-                                    </div>
+                                <div class="bubble-bottom left">
+                                    <p class="textual"></p>
                                 </div>
-                                <div class="row">
-                                    <div class="col s6">
-                                        <input type="checkbox" value="lb" id="form-lb"> Bottom Left
-                                    </div>
-                                    <div class="col s6">
-                                        <input type="checkbox" value="rb" id="form-rb"> Bottom Right
-                                    </div>
+                                <div class="bubble-bottom right">
+                                    <p class="textual"></p>
                                 </div>
-                            </p>
-                            <p><button type="reset" id="reset-button">Reset</button></p>
-                        </form>
-                    </div>
-                    <!-- Frame 6 -->
-                    <div class="frame" id="frame6">
-                        <section id="pane6" class="">
-                            <header id="header6" class="textual header"></header>
-                            <img id="bg6" src="" class="bg_image" />
-                            <div class="bubble-top left">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-top right">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-bottom left">
-                                <p class="textual"></p>
-                            </div>
-                            <div class="bubble-bottom right">
-                                <p class="textual"></p>
-                            </div>
-                        </section>
-                        <!-- Form 6 -->
-                        <form id="form6">
-                            <p><label for="form-heading">Heading:</label>
-                                <input id="form-heading" type="checkbox" /></p>
-                            <p><label for="form-background">Background:</label>
-                                <select id="form-background">
-                                    <option value="none">None</option>
-                                    <optgroup label="Custom Backgrounds">
-                                        <option value="custom">Image (enter URL below)</option>
-                                    </optgroup>
-                                    <optgroup label="Preset Backgrounds">
-                                        <option value="beach.jpg">Beach</option>
-                                        <option value="belfast.jpg">Belfast</option>
-                                        <option value="bluebells.jpg">Bluebells</option>
-                                        <option value="cloudy_lake.jpg">Cloudy Lake</option>
-                                        <option value="computer_class.jpg">Computer Class</option>
-                                        <option value="country_lane.jpg">Country Lane</option>
-                                        <option value="death_star.jpg">Death Star</option>
-                                        <option value="doradus.jpg">Doradus</option>
-                                        <option value="dunes.jpg">Dunes</option>
-                                        <option value="edinburgh.jpg">Edinburgh</option>
-                                        <option value="field.jpg">Field</option>
-                                        <option value="fish.jpg">Fish</option>
-                                        <option value="forest_lake.jpg">Forest Lake</option>
-                                        <option value="forest_stream.jpg">Forest Stream</option>
-                                        <option value="london.jpg">London</option>
-                                        <option value="mars.jpg">Mars</option>
-                                        <option value="monument_valley.jpg">Monument Valley</option>
-                                        <option value="moon.jpg">Moon</option>
-                                        <option value="mountain_river.jpg">Mountain River</option>
-                                        <option value="office.jpg">Office</option>
-                                        <option value="old_computer.jpg">Old Computer</option>
-                                        <option value="pattern01.jpg">Pattern 01</option>
-                                        <option value="pattern02.jpg">Pattern 02</option>
-                                        <option value="pattern03.jpg">Pattern 03</option>
-                                        <option value="pattern04.jpg">Pattern 04</option>
-                                        <option value="pattern05.jpg">Pattern 05</option>
-                                        <option value="pattern06.jpg">Pattern 06</option>
-                                        <option value="phosphor_sea.jpg">Phosphor Sea</option>
-                                        <option value="seaside.jpg">Seaside</option>
-                                        <option value="skulls.jpg">Skulls</option>
-                                        <option value="snow.jpg">Snow</option>
-                                        <option value="sunset.jpg">Sunset</option>
-                                        <option value="winter_sun.jpg">Winter Sun</option>
-                                    </optgroup>
-                                </select></p>
-                            <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" /></p>
-                            <p><label for="form-tl">Speech bubbles:</label><br />
-                                <div class="row">
-                                    <div class="col s6">
-                                        <input type="checkbox" value="lt" id="form-lt"> Top Left
+                            </section>
+                            <!-- Form 4 -->
+                            <form id="form4">
+                                <p>
+                                    <label for="form-heading">Heading:</label>
+                                    <input id="form-heading" type="checkbox" />
+                                </p>
+                                <p><label for="form-background">Background:</label>
+                                    <select id="form-background">
+                                        <option value="none">None</option>
+                                        <optgroup label="Custom Backgrounds">
+                                            <option value="custom">Image (enter URL below)</option>
+                                        </optgroup>
+                                        <optgroup label="Preset Backgrounds">
+                                            <option value="beach.jpg">Beach</option>
+                                            <option value="belfast.jpg">Belfast</option>
+                                            <option value="bluebells.jpg">Bluebells</option>
+                                            <option value="cloudy_lake.jpg">Cloudy Lake</option>
+                                            <option value="computer_class.jpg">Computer Class</option>
+                                            <option value="country_lane.jpg">Country Lane</option>
+                                            <option value="death_star.jpg">Death Star</option>
+                                            <option value="doradus.jpg">Doradus</option>
+                                            <option value="dunes.jpg">Dunes</option>
+                                            <option value="edinburgh.jpg">Edinburgh</option>
+                                            <option value="field.jpg">Field</option>
+                                            <option value="fish.jpg">Fish</option>
+                                            <option value="forest_lake.jpg">Forest Lake</option>
+                                            <option value="forest_stream.jpg">Forest Stream</option>
+                                            <option value="london.jpg">London</option>
+                                            <option value="mars.jpg">Mars</option>
+                                            <option value="monument_valley.jpg">Monument Valley</option>
+                                            <option value="moon.jpg">Moon</option>
+                                            <option value="mountain_river.jpg">Mountain River</option>
+                                            <option value="office.jpg">Office</option>
+                                            <option value="old_computer.jpg">Old Computer</option>
+                                            <option value="pattern01.jpg">Pattern 01</option>
+                                            <option value="pattern02.jpg">Pattern 02</option>
+                                            <option value="pattern03.jpg">Pattern 03</option>
+                                            <option value="pattern04.jpg">Pattern 04</option>
+                                            <option value="pattern05.jpg">Pattern 05</option>
+                                            <option value="pattern06.jpg">Pattern 06</option>
+                                            <option value="phosphor_sea.jpg">Phosphor Sea</option>
+                                            <option value="seaside.jpg">Seaside</option>
+                                            <option value="skulls.jpg">Skulls</option>
+                                            <option value="snow.jpg">Snow</option>
+                                            <option value="sunset.jpg">Sunset</option>
+                                            <option value="winter_sun.jpg">Winter Sun</option>
+                                        </optgroup>
+                                    </select></p>
+                                <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" />
+                                </p>
+                                <p>
+                                    <label for="form-tl">Speech bubbles:</label><br />
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <input type="checkbox" value="lt" id="form-lt"> Top Left
+                                        </div>
+                                        <div class="col s6">
+                                            <input type="checkbox" value="rt" id="form-rt"> Top Right
+                                        </div>
                                     </div>
-                                    <div class="col s6">
-                                        <input type="checkbox" value="rt" id="form-rt"> Top Right
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <input type="checkbox" value="lb" id="form-lb"> Bottom Left
+                                        </div>
+                                        <div class="col s6">
+                                            <input type="checkbox" value="rb" id="form-rb"> Bottom Right
+                                        </div>
                                     </div>
+                                </p>
+                                <p><button type="reset" id="reset-button">Reset</button></p>
+                            </form>
+                        </div>
+                        <!-- Frame 5 -->
+                        <div class="frame" id="frame5">
+                            <section id="pane5" class="">
+                                <header id="header5" class="textual header"></header>
+                                <img id="bg5" src="" class="bg_image" />
+                                <div class="bubble-top left">
+                                    <p class="textual"></p>
                                 </div>
-                                <div class="row">
-                                    <div class="col s6">
-                                        <input type="checkbox" value="lb" id="form-lb"> Bottom Left
-                                    </div>
-                                    <div class="col s6">
-                                        <input type="checkbox" value="rb" id="form-rb"> Bottom Right
-                                    </div>
+                                <div class="bubble-top right">
+                                    <p class="textual"></p>
                                 </div>
-                            </p>
-                            <p><button type="reset" id="reset-button">Reset</button></p>
-                        </form>
+                                <div class="bubble-bottom left">
+                                    <p class="textual"></p>
+                                </div>
+                                <div class="bubble-bottom right">
+                                    <p class="textual"></p>
+                                </div>
+                            </section>
+                            <!-- Form 5 -->
+                            <form id="form5">
+                                <p><label for="form-heading">Heading:</label>
+                                    <input id="form-heading" type="checkbox" /></p>
+                                <p><label for="form-background">Background:</label>
+                                    <select id="form-background">
+                                        <option value="none">None</option>
+                                        <optgroup label="Custom Backgrounds">
+                                            <option value="custom">Image (enter URL below)</option>
+                                        </optgroup>
+                                        <optgroup label="Preset Backgrounds">
+                                            <option value="beach.jpg">Beach</option>
+                                            <option value="belfast.jpg">Belfast</option>
+                                            <option value="bluebells.jpg">Bluebells</option>
+                                            <option value="cloudy_lake.jpg">Cloudy Lake</option>
+                                            <option value="computer_class.jpg">Computer Class</option>
+                                            <option value="country_lane.jpg">Country Lane</option>
+                                            <option value="death_star.jpg">Death Star</option>
+                                            <option value="doradus.jpg">Doradus</option>
+                                            <option value="dunes.jpg">Dunes</option>
+                                            <option value="edinburgh.jpg">Edinburgh</option>
+                                            <option value="field.jpg">Field</option>
+                                            <option value="fish.jpg">Fish</option>
+                                            <option value="forest_lake.jpg">Forest Lake</option>
+                                            <option value="forest_stream.jpg">Forest Stream</option>
+                                            <option value="london.jpg">London</option>
+                                            <option value="mars.jpg">Mars</option>
+                                            <option value="monument_valley.jpg">Monument Valley</option>
+                                            <option value="moon.jpg">Moon</option>
+                                            <option value="mountain_river.jpg">Mountain River</option>
+                                            <option value="office.jpg">Office</option>
+                                            <option value="old_computer.jpg">Old Computer</option>
+                                            <option value="pattern01.jpg">Pattern 01</option>
+                                            <option value="pattern02.jpg">Pattern 02</option>
+                                            <option value="pattern03.jpg">Pattern 03</option>
+                                            <option value="pattern04.jpg">Pattern 04</option>
+                                            <option value="pattern05.jpg">Pattern 05</option>
+                                            <option value="pattern06.jpg">Pattern 06</option>
+                                            <option value="phosphor_sea.jpg">Phosphor Sea</option>
+                                            <option value="seaside.jpg">Seaside</option>
+                                            <option value="skulls.jpg">Skulls</option>
+                                            <option value="snow.jpg">Snow</option>
+                                            <option value="sunset.jpg">Sunset</option>
+                                            <option value="winter_sun.jpg">Winter Sun</option>
+                                        </optgroup>
+                                    </select></p>
+                                <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" />
+                                </p>
+                                <p><label for="form-tl">Speech bubbles:</label><br />
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <input type="checkbox" value="lt" id="form-lt"> Top Left
+                                        </div>
+                                        <div class="col s6">
+                                            <input type="checkbox" value="rt" id="form-rt"> Top Right
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <input type="checkbox" value="lb" id="form-lb"> Bottom Left
+                                        </div>
+                                        <div class="col s6">
+                                            <input type="checkbox" value="rb" id="form-rb"> Bottom Right
+                                        </div>
+                                    </div>
+                                </p>
+                                <p><button type="reset" id="reset-button">Reset</button></p>
+                            </form>
+                        </div>
+                        <!-- Frame 6 -->
+                        <div class="frame" id="frame6">
+                            <section id="pane6" class="">
+                                <header id="header6" class="textual header"></header>
+                                <img id="bg6" src="" class="bg_image" />
+                                <div class="bubble-top left">
+                                    <p class="textual"></p>
+                                </div>
+                                <div class="bubble-top right">
+                                    <p class="textual"></p>
+                                </div>
+                                <div class="bubble-bottom left">
+                                    <p class="textual"></p>
+                                </div>
+                                <div class="bubble-bottom right">
+                                    <p class="textual"></p>
+                                </div>
+                            </section>
+                            <!-- Form 6 -->
+                            <form id="form6">
+                                <p><label for="form-heading">Heading:</label>
+                                    <input id="form-heading" type="checkbox" /></p>
+                                <p><label for="form-background">Background:</label>
+                                    <select id="form-background">
+                                        <option value="none">None</option>
+                                        <optgroup label="Custom Backgrounds">
+                                            <option value="custom">Image (enter URL below)</option>
+                                        </optgroup>
+                                        <optgroup label="Preset Backgrounds">
+                                            <option value="beach.jpg">Beach</option>
+                                            <option value="belfast.jpg">Belfast</option>
+                                            <option value="bluebells.jpg">Bluebells</option>
+                                            <option value="cloudy_lake.jpg">Cloudy Lake</option>
+                                            <option value="computer_class.jpg">Computer Class</option>
+                                            <option value="country_lane.jpg">Country Lane</option>
+                                            <option value="death_star.jpg">Death Star</option>
+                                            <option value="doradus.jpg">Doradus</option>
+                                            <option value="dunes.jpg">Dunes</option>
+                                            <option value="edinburgh.jpg">Edinburgh</option>
+                                            <option value="field.jpg">Field</option>
+                                            <option value="fish.jpg">Fish</option>
+                                            <option value="forest_lake.jpg">Forest Lake</option>
+                                            <option value="forest_stream.jpg">Forest Stream</option>
+                                            <option value="london.jpg">London</option>
+                                            <option value="mars.jpg">Mars</option>
+                                            <option value="monument_valley.jpg">Monument Valley</option>
+                                            <option value="moon.jpg">Moon</option>
+                                            <option value="mountain_river.jpg">Mountain River</option>
+                                            <option value="office.jpg">Office</option>
+                                            <option value="old_computer.jpg">Old Computer</option>
+                                            <option value="pattern01.jpg">Pattern 01</option>
+                                            <option value="pattern02.jpg">Pattern 02</option>
+                                            <option value="pattern03.jpg">Pattern 03</option>
+                                            <option value="pattern04.jpg">Pattern 04</option>
+                                            <option value="pattern05.jpg">Pattern 05</option>
+                                            <option value="pattern06.jpg">Pattern 06</option>
+                                            <option value="phosphor_sea.jpg">Phosphor Sea</option>
+                                            <option value="seaside.jpg">Seaside</option>
+                                            <option value="skulls.jpg">Skulls</option>
+                                            <option value="snow.jpg">Snow</option>
+                                            <option value="sunset.jpg">Sunset</option>
+                                            <option value="winter_sun.jpg">Winter Sun</option>
+                                        </optgroup>
+                                    </select></p>
+                                <p><input id="form-image-url" type="text" class="custom-image" disabled="disabled" />
+                                </p>
+                                <p><label for="form-tl">Speech bubbles:</label><br />
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <input type="checkbox" value="lt" id="form-lt"> Top Left
+                                        </div>
+                                        <div class="col s6">
+                                            <input type="checkbox" value="rt" id="form-rt"> Top Right
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <input type="checkbox" value="lb" id="form-lb"> Bottom Left
+                                        </div>
+                                        <div class="col s6">
+                                            <input type="checkbox" value="rb" id="form-rb"> Bottom Right
+                                        </div>
+                                    </div>
+                                </p>
+                                <p><button type="reset" id="reset-button">Reset</button></p>
+                            </form>
+                        </div>
                     </div>
                 </article>
                 <!-- Footer -->
@@ -600,6 +608,12 @@
             </main>
         </div>
     </div>
+
+    <!-- Hidden Content -->
+    <div id="content-hidden"></div>
+
+    <!-- Content -->
+    <div id="content"></div>
 
     <!-- Twitter share -->
     <script>window.twttr = (function (d, s, id) {
@@ -613,7 +627,6 @@
         crossorigin="anonymous"></script>
     <script src="assets/js/intro.min.js"></script>
     <script src="assets/js/qs.js"></script>
-    <!-- <script src="assets/js/record.js"></script> -->
     <script src="assets/js/index.js"></script>
 
 </body>
