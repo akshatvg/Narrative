@@ -38,19 +38,19 @@ function update_scene(context) {
     }
     if (context.bg4) {
         $('#bg4').show();
-        $('#bg4').attr('src', context.bg1);
+        $('#bg4').attr('src', context.bg4);
     } else {
         $('#bg4').hide();
     }
     if (context.bg5) {
         $('#bg5').show();
-        $('#bg5').attr('src', context.bg2);
+        $('#bg5').attr('src', context.bg5);
     } else {
         $('#bg5').hide();
     }
     if (context.bg6) {
         $('#bg6').show();
-        $('#bg6').attr('src', context.bg3);
+        $('#bg6').attr('src', context.bg6);
     } else {
         $('#bg6').hide();
     }
@@ -459,6 +459,15 @@ function get_state_from_dom() {
     if (pane3.find('.header').is(':visible')) {
         result.h3 = pane3.find('.header').text();
     }
+    if (pane4.find('.header').is(':visible')) {
+        result.h4 = pane4.find('.header').text();
+    }
+    if (pane5.find('.header').is(':visible')) {
+        result.h5 = pane5.find('.header').text();
+    }
+    if (pane6.find('.header').is(':visible')) {
+        result.h6 = pane6.find('.header').text();
+    }
     if ($('#bg1').is(":visible")) {
         result.bg1 = $('#bg1').attr('src');
     }
@@ -469,13 +478,13 @@ function get_state_from_dom() {
         result.bg3 = $('#bg3').attr('src');
     }
     if ($('#bg4').is(":visible")) {
-        result.bg1 = $('#bg4').attr('src');
+        result.bg4 = $('#bg4').attr('src');
     }
     if ($('#bg5').is(":visible")) {
-        result.bg2 = $('#bg5').attr('src');
+        result.bg5 = $('#bg5').attr('src');
     }
     if ($('#bg6').is(":visible")) {
-        result.bg3 = $('#bg6').attr('src');
+        result.bg6 = $('#bg6').attr('src');
     }
     if (pane1.find('.bubble-top.left').is(':visible')) {
         result.lt1 = pane1.find('.bubble-top.left p').text();
@@ -514,40 +523,40 @@ function get_state_from_dom() {
         result.rb3 = pane3.find('.bubble-bottom.right p').text();
     }
     if (pane4.find('.bubble-top.left').is(':visible')) {
-        result.lt4 = pane1.find('.bubble-top.left p').text();
+        result.lt4 = pane4.find('.bubble-top.left p').text();
     }
     if (pane4.find('.bubble-top.right').is(':visible')) {
-        result.rt4 = pane1.find('.bubble-top.right p').text();
+        result.rt4 = pane4.find('.bubble-top.right p').text();
     }
     if (pane4.find('.bubble-bottom.left').is(':visible')) {
-        result.lb4 = pane1.find('.bubble-bottom.left p').text();
+        result.lb4 = pane4.find('.bubble-bottom.left p').text();
     }
     if (pane4.find('.bubble-bottom.right').is(':visible')) {
-        result.rb4 = pane1.find('.bubble-bottom.right p').text();
+        result.rb4 = pane4.find('.bubble-bottom.right p').text();
     }
     if (pane5.find('.bubble-top.left').is(':visible')) {
-        result.lt5 = pane2.find('.bubble-top.left p').text();
+        result.lt5 = pane5.find('.bubble-top.left p').text();
     }
     if (pane5.find('.bubble-top.right').is(':visible')) {
-        result.rt5 = pane2.find('.bubble-top.right p').text();
+        result.rt5 = pane5.find('.bubble-top.right p').text();
     }
     if (pane5.find('.bubble-bottom.left').is(':visible')) {
-        result.lb5 = pane2.find('.bubble-bottom.left p').text();
+        result.lb5 = pane5.find('.bubble-bottom.left p').text();
     }
     if (pane5.find('.bubble-bottom.right').is(':visible')) {
-        result.rb5 = pane2.find('.bubble-bottom.right p').text();
+        result.rb5 = pane5.find('.bubble-bottom.right p').text();
     }
     if (pane6.find('.bubble-top.left').is(':visible')) {
-        result.lt6 = pane3.find('.bubble-top.left p').text();
+        result.lt6 = pane6.find('.bubble-top.left p').text();
     }
     if (pane6.find('.bubble-top.right').is(':visible')) {
-        result.rt6 = pane3.find('.bubble-top.right p').text();
+        result.rt6 = pane6.find('.bubble-top.right p').text();
     }
     if (pane6.find('.bubble-bottom.left').is(':visible')) {
-        result.lb6 = pane3.find('.bubble-bottom.left p').text();
+        result.lb6 = pane6.find('.bubble-bottom.left p').text();
     }
     if (pane6.find('.bubble-bottom.right').is(':visible')) {
-        result.rb6 = pane3.find('.bubble-bottom.right p').text();
+        result.rb6 = pane6.find('.bubble-bottom.right p').text();
     }
     return result;
 }
