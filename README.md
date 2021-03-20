@@ -63,7 +63,7 @@ The source code of this project is written in **`HTML/CSS/JS`**. So, you do not 
 
 ## Instructions to run front-end
 
-[![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https:/?narrative.akshatvg.com)
+[![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https://narrative.akshatvg.com)
 
 Extract the folder and run `index.html`
 
